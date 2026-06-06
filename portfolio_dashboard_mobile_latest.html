@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="refresh" content="300">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Portfolio Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #0d0f14;
+  --bg2:    #13161e;
+  --bg3:    #1a1e28;
+  --border: rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.13);
+  --text:   #e8eaf0;
+  --muted:  #7a7f91;
+  --accent: #7c6bff;
+  --green:  #22c55e;
+  --red:    #ef4444;
+  --amber:  #f59e0b;
+  --blue:   #60a5fa;
+  --radius: 14px;
+  --font:   'Syne', sans-serif;
+  --mono:   'IBM Plex Mono', monospace;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bot: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  padding: calc(var(--safe-top) + 16px) 14px calc(var(--safe-bot) + 24px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* ── header ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.header h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+.header h1 span { color: var(--accent); }
+.header-right { text-align: right; }
+.run-time { font-size: 10px; color: var(--muted); font-family: var(--mono); line-height: 1.6; }
+#live-clock { display: block; }
+
+/* ── alert bar ── */
+.alert-bar {
+  background: rgba(239,68,68,0.10);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 10px;
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #fca5a5;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.alert-bar.clear {
+  background: rgba(34,197,94,0.08);
+  border-color: rgba(34,197,94,0.2);
+  color: #86efac;
+}
+
+/* ── section label ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.collapse-btn {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  border-radius: 6px;
+  width: 22px; height: 22px;
+  font-size: 15px; line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0; flex-shrink: 0;
+}
+
+/* ── metric cards ── */
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.mcard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 13px;
+}
+.mcard.wide { grid-column: 1 / -1; }
+.mcard.accent { border-color: rgba(124,107,255,0.3); background: rgba(124,107,255,0.07); }
+.mcard .label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+.mcard .value { font-size: 20px; font-weight: 700; font-family: var(--mono); line-height: 1.1; }
+.mcard .sub   { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+/* leverage bar */
+.lev-bar-wrap { margin-top: 8px; }
+.lev-track { height: 4px; background: var(--border2); border-radius: 2px; position: relative; }
+.lev-fill  { height: 100%; border-radius: 2px; }
+.lev-markers { display: flex; justify-content: space-between; font-size: 9px; color: var(--muted); margin-top: 3px; font-family: var(--mono); }
+
+/* today P&L split */
+.pl-split { display: flex; gap: 6px; font-size: 10px; color: var(--muted); flex-wrap: wrap; margin-top: 2px; }
+.pl-split .pos { color: var(--green); }
+.pl-split .neg { color: var(--red); }
+
+/* ── badges ── */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-roll  { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+.badge-close { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+.badge-hold  { background: rgba(34,197,94,0.10); color: #86efac; border: 1px solid rgba(34,197,94,0.2); }
+
+/* ── market divider ── */
+.mkt-divider {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); padding: 6px 2px 6px; margin-top: 4px;
+}
+
+/* ── option cards ── */
+.opt-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.opt-card.card-alert {
+  border-color: rgba(239,68,68,0.30);
+  background: rgba(239,68,68,0.04);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.flag { font-size: 16px; }
+.und  { letter-spacing: -0.01em; }
+.cp-tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.cp-call { background: rgba(96,165,250,0.15); color: #93c5fd; }
+.cp-put  { background: rgba(167,139,250,0.15); color: #c4b5fd; }
+.card-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 2-column KV grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 10px;
+  margin-bottom: 10px;
+}
+.kv { display: flex; flex-direction: column; gap: 2px; }
+.k  { font-size: 10px; color: var(--muted); }
+.v  { font-size: 13px; display: flex; align-items: center; gap: 4px; }
+.mono { font-family: var(--mono); }
+
+/* DTE inline bar */
+.dte-num   { font-family: var(--mono); font-size: 13px; font-weight: 500; }
+.dte-track { display: inline-block; width: 36px; height: 3px; background: var(--border2); border-radius: 2px; vertical-align: middle; overflow: hidden; }
+.dte-fill  { display: block; height: 100%; border-radius: 2px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+/* card bottom */
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 9px;
+  margin-top: 2px;
+}
+.pnl { font-family: var(--mono); font-size: 14px; font-weight: 600; }
+.pnl.pos { color: var(--green); }
+.pnl.neg { color: var(--red); }
+.pnl.neutral { color: var(--muted); }
+.pnl-pct { font-size: 11px; font-weight: 400; opacity: 0.8; }
+
+/* roll rec */
+.rec-btn {
+  background: rgba(124,107,255,0.15);
+  border: 1px solid rgba(124,107,255,0.3);
+  color: #a89fff;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: var(--font);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.rec-btn:active { background: rgba(124,107,255,0.28); }
+.rec-box {
+  background: var(--bg3);
+  border: 1px solid rgba(124,107,255,0.22);
+  border-radius: 10px;
+  padding: 11px 13px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.rec-title { font-weight: 700; font-size: 11px; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+.rec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  gap: 8px;
+}
+.rec-row:last-child { border-bottom: none; }
+.rec-row span:first-child { flex-shrink: 0; }
+.rec-row span:last-child  { text-align: right; color: var(--text); }
+.rec-credit span:last-child { color: var(--green); font-weight: 700; }
+
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+.neutral { color: var(--muted); }
+
+/* ── empty state ── */
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 32px 0;
+  font-size: 13px;
+}
+
+/* ── footer ── */
+.footer {
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+}
+
+/* ── animations ── */
+@keyframes fadeIn { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+.mcard   { animation: fadeIn 0.35s ease both; }
+.opt-card { animation: fadeIn 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Haoming's <span>Portfolio</span></h1>
+  <div class="header-right">
+    <div class="run-time">
+      <span>2026-06-06 11:30:02</span>
+      <span>USD/HKD 7.8345</span>
+      <span id="live-clock"></span>
+    </div>
+  </div>
+</div>
+
+<div class="alert-bar">
+          <span>⚡ 需要操作：</span>
+          <span><strong>2</strong> 个展期</span>
+          
+        </div>
+
+<!-- ── ZONE A: account ── -->
+<div class="section-label">
+  <span>账户概览</span>
+  <button class="collapse-btn" onclick="toggleSection(this,'metrics-block')" title="折叠">−</button>
+</div>
+<div id="metrics-block">
+  <div class="metrics">
+    <div class="mcard">
+      <div class="label">净资产</div>
+      <div class="value">1,534,220</div>
+      <div class="sub">HKD</div>
+    </div>
+    <div class="mcard">
+      <div class="label">总持仓市值</div>
+      <div class="value">2,045,555</div>
+      <div class="sub">HKD (多空绝对值)</div>
+    </div>
+    <div class="mcard">
+      <div class="label">HKD 持仓</div>
+      <div class="value">1,878,632</div>
+      <div class="sub">今日 <span class="pos">+0</span></div>
+      <div class="pl-split">
+        <span>股票 <span class="pos">+0</span></span>
+        <span>期权 <span class="pos">+0</span></span>
+      </div>
+    </div>
+    <div class="mcard">
+      <div class="label">USD 持仓</div>
+      <div class="value">21,306</div>
+      <div class="sub">今日 <span class="pos">+0</span></div>
+      <div class="pl-split">
+        <span>股票 <span class="pos">+0</span></span>
+        <span>期权 <span class="pos">+0</span></span>
+      </div>
+    </div>
+    <div class="mcard">
+      <div class="label">融资余额</div>
+      <div class="value neg">-511,336</div>
+      <div class="sub">HKD: -284,458 | USD: -28,959</div>
+    </div>
+    <div class="mcard accent">
+      <div class="label">杠杆倍数</div>
+      <div class="value" style="color:#ef4444">2.85×</div>
+      <div class="lev-bar-wrap">
+        <div class="lev-track"><div class="lev-fill" style="width:57.0%;background:#ef4444"></div></div>
+        <div class="lev-markers"><span>0×</span><span>警戒 2×</span><span>5×</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ZONE B: options ── -->
+<div class="section-label" style="margin-top:4px;">
+  <span>期权持仓</span>
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class='badge badge-roll'>2 展期</span>
+    
+    
+  </div>
+</div>
+<div id="opts-block">
+  <div class="mkt-divider">🇭🇰 香港期权</div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">00241</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.ALH260629C4000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">4.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">3.59</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">23d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:51.11111111111111%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.199</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">47.6%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0450</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">700 <span class="pnl-pct">(+59.1%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">00241</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.ALH270330C5500</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">5.50</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">3.59</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.225</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">46.0%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0900</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">800 <span class="pnl-pct">(+38.5%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card card-alert">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">00241</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-roll">ROLL</span>
+          </div>
+          <div class="card-sub mono">HK.ALH270330P6000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">6.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">3.59</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.742</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">63.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">6.6%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-2,500 <span class="pnl-pct">(-10.7%)</span></div>
+            <div><button class="rec-btn" onclick="toggleRec(this,'rec-HK-ALH270330P6000')">建议 ↗</button></div>
+          </div>
+          <div class="rec-box" id="rec-HK-ALH270330P6000" style="display:none">
+              <div class="rec-title">无正权利金展期</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;">建议等待IV上升后再展期</div>
+            </div>
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">00700</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.TCH260629C450000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">450.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">453.20</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">23d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:51.11111111111111%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">0.579</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">40.5%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">22.0300</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">85.5%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">8,296 <span class="pnl-pct">(-2.5%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">00700</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.TCH270330P400000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">400.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">453.20</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">-0.246</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">31.6%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">21.9300</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-2,250 <span class="pnl-pct">(+1.9%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01024</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.KST260612C48000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">48.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">46.86</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-12</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#f59e0b">6d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.398</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">53.4%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.8900</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">19,740 <span class="pnl-pct">(+60.1%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01024</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.KST270330C85000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">85.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">46.86</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.176</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">53.2%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.7500</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">4,140 <span class="pnl-pct">(+11.7%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card card-alert">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01024</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-roll">ROLL</span>
+          </div>
+          <div class="card-sub mono">HK.KST270330P72500</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">72.50</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">46.86</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.715</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">59.1%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">7.9%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-24,470 <span class="pnl-pct">(-5.1%)</span></div>
+            <div><button class="rec-btn" onclick="toggleRec(this,'rec-HK-KST270330P72500')">建议 ↗</button></div>
+          </div>
+          <div class="rec-box" id="rec-HK-KST270330P72500" style="display:none">
+              <div class="rec-title">无正权利金展期</div>
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;">建议等待IV上升后再展期</div>
+            </div>
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01810</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.MIU260612C29000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">29.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">27.80</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-12</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#f59e0b">6d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.271</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">40.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.2400</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">270 <span class="pnl-pct">(+29.4%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01810</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.MIU270330C40000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">40.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">27.80</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.246</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">41.4%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">1.2850</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">5,700 <span class="pnl-pct">(+22.1%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">01810</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.MIU270330P30000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">30.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">27.80</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.486</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">39.6%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">4.7300</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">53.5%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-7,950 <span class="pnl-pct">(-14.8%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">02015</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.LAU260629C60000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">60.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">56.65</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">23d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:51.11111111111111%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.342</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">46.8%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">1.4300</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">310 <span class="pnl-pct">(+16.4%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09626</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.BLI260629C150000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">150.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">142.80</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">23d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:51.11111111111111%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.379</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">52.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">4.6450</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-1,056 <span class="pnl-pct">(-32.0%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09868</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.PEN270330C102500</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">102.50</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">65.00</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.308</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">61.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">30,492 <span class="pnl-pct">(+30.8%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09868</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.PEN270330P75000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">75.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">65.00</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.499</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">57.9%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">47.3%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-27,720 <span class="pnl-pct">(-13.1%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09961</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.TRP260629C400000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">400.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">369.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">23d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:51.11111111111111%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.284</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">45.9%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">7.1500</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">249 <span class="pnl-pct">(+16.4%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09961</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.TRP270330C510000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">510.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">369.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.248</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">37.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">1,383 <span class="pnl-pct">(+22.5%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09961</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.TRP270330P430000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">430.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">369.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.595</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">37.2%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">25.2%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl neg">-1,521 <span class="pnl-pct">(-6.7%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09988</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.ALB260612C125000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">125.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">122.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-12</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#f59e0b">6d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.373</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">37.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">1.5100</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">260 <span class="pnl-pct">(+1.9%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09992</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.POP260929C180000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">180.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">176.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-09-29</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">115d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">0.540</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">47.0%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">17.9200</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">14 <span class="pnl-pct">(-0.7%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09992</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.POP270330C265000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">265.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">176.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.279</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">51.1%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">324 <span class="pnl-pct">(+12.6%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇭🇰</span>
+              <span class="und">09992</span>
+              <span class="cp-tag cp-put">PUT</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">HK.POP270330P195000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">195.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">176.40</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-03-30</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">297d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.481</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">50.7%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.0000</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">54.1%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">168 <span class="pnl-pct">(+2.0%)</span></div>
+            <div></div>
+          </div>
+          
+        </div><div class="mkt-divider">🇺🇸 美股期权</div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇺🇸</span>
+              <span class="und">FUTU</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">US.FUTU260612C104000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">104.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">92.33</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2026-06-12</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#f59e0b">7d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:15.555555555555555%;background:#f59e0b"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.101</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">66.0%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.3800</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">125 <span class="pnl-pct">(+77.0%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+        <div class="opt-card">
+          <div class="card-top">
+            <div class="card-title">
+              <span class="flag">🇺🇸</span>
+              <span class="und">TSLL</span>
+              <span class="cp-tag cp-call">CALL</span>
+            </div>
+            <span class="badge badge-hold">HOLD</span>
+          </div>
+          <div class="card-sub mono">US.TSLL270115C21000</div>
+          <div class="card-grid">
+            <div class="kv"><span class="k">行权价</span><span class="v mono">21.00</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">12.72</span></div>
+            <div class="kv"><span class="k">到期日</span><span class="v">2027-01-15</span></div>
+            <div class="kv">
+              <span class="k">DTE</span>
+              <span class="v">
+                <span class="dte-num" style="color:#22c55e">224d</span>
+                <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
+              </span>
+            </div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.397</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">96.0%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">1.8550</span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+          </div>
+          <div class="card-bottom">
+            <div class="pnl pos">918 <span class="pnl-pct">(+31.3%)</span></div>
+            <div></div>
+          </div>
+          
+        </div>
+</div>
+
+<div class="footer">Futu Monitor · 2026-06-06 11:30:02 · 富途 OpenAPI</div>
+
+<script>
+function toggleSection(btn, id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const hidden = el.style.display === 'none';
+  el.style.display = hidden ? '' : 'none';
+  btn.textContent = hidden ? '−' : '+';
+}
+function toggleRec(btn, id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const visible = el.style.display !== 'none';
+  el.style.display = visible ? 'none' : 'block';
+  btn.textContent = visible ? '建议 ↗' : '建议 ↑';
+}
+(function() {
+  function tick() {
+    const now = new Date();
+    const p = n => String(n).padStart(2, '0');
+    document.getElementById('live-clock').textContent =
+      now.getFullYear() + '-' + p(now.getMonth()+1) + '-' + p(now.getDate()) +
+      ' ' + p(now.getHours()) + ':' + p(now.getMinutes()) + ':' + p(now.getSeconds());
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
