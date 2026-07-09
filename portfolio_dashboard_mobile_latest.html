@@ -304,8 +304,8 @@ body {
   <h1>Haoming's <span>Portfolio</span></h1>
   <div class="header-right">
     <div class="run-time">
-      <span>2026-07-10 03:55:13</span>
-      <span>USD/HKD 7.8362</span>
+      <span>2026-07-10 04:00:35</span>
+      <span>USD/HKD 7.8347</span>
       <span id="live-clock"></span>
     </div>
   </div>
@@ -313,7 +313,7 @@ body {
 
 <div class="alert-bar">
           <span>⚡ 需要操作：</span>
-          <span><strong>5</strong> 个展期</span>
+          <span><strong>6</strong> 个展期</span>
           <span><strong>1</strong> 个回购</span>
         </div>
 
@@ -326,12 +326,12 @@ body {
   <div class="metrics">
     <div class="mcard">
       <div class="label">净资产</div>
-      <div class="value">1,351,623</div>
+      <div class="value">1,352,006</div>
       <div class="sub">HKD</div>
     </div>
     <div class="mcard">
       <div class="label">总持仓市值</div>
-      <div class="value">1,770,246</div>
+      <div class="value">1,770,859</div>
       <div class="sub">HKD (多空绝对值)</div>
     </div>
     <div class="mcard">
@@ -345,16 +345,16 @@ body {
     </div>
     <div class="mcard">
       <div class="label">USD 持仓</div>
-      <div class="value">23,344</div>
-      <div class="sub">今日 <span class="pos">+398</span></div>
+      <div class="value">23,427</div>
+      <div class="sub">今日 <span class="pos">+446</span></div>
       <div class="pl-split">
-        <span>股票 <span class="pos">+886</span></span>
-        <span>期权 <span class="neg">-489</span></span>
+        <span>股票 <span class="pos">+957</span></span>
+        <span>期权 <span class="neg">-511</span></span>
       </div>
     </div>
     <div class="mcard">
       <div class="label">融资余额</div>
-      <div class="value neg">-428,371</div>
+      <div class="value neg">-428,322</div>
       <div class="sub">HKD: -179,741 | USD: -31,728</div>
     </div>
     <div class="mcard accent">
@@ -372,26 +372,26 @@ body {
 <div class="section-label" style="margin-top:4px;">
   <span>期权持仓</span>
   <div style="display:flex;align-items:center;gap:8px">
-    <span class='badge badge-roll'>5 展期</span>
+    <span class='badge badge-roll'>6 展期</span>
     <span class='badge badge-close'>1 回购</span>
     
   </div>
 </div>
 <div id="opts-block">
   <div class="mkt-divider">🇺🇸 美股期权</div>
-        <div class="opt-card">
+        <div class="opt-card card-alert">
           <div class="card-top">
             <div class="card-title">
               <span class="flag">🇺🇸</span>
               <span class="und">FUTU</span>
               <span class="cp-tag cp-call">CALL</span>
             </div>
-            <span class="badge badge-hold">HOLD</span>
+            <span class="badge badge-roll">ROLL</span>
           </div>
           <div class="card-sub mono">US.FUTU260710C99000</div>
           <div class="card-grid">
             <div class="kv"><span class="k">行权价</span><span class="v mono">99.00</span></div>
-            <div class="kv"><span class="k">正股价</span><span class="v mono">96.57</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">97.02</span></div>
             <div class="kv"><span class="k">到期日</span><span class="v">2026-07-10</span></div>
             <div class="kv">
               <span class="k">DTE</span>
@@ -400,16 +400,24 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:2.2222222222222223%;background:#ef4444"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.343</span></span></div>
-            <div class="kv"><span class="k">IV</span><span class="v mono">98.9%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">0.466</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">258.0%</span></div>
             <div class="kv"><span class="k">最新价</span><span class="v mono">4.3200</span></div>
             <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
           </div>
           <div class="card-bottom">
             <div class="pnl neg">-272 <span class="pnl-pct">(-170.0%)</span></div>
-            <div></div>
+            <div><button class="rec-btn" onclick="toggleRec(this,'rec-US-FUTU260710C99000')">建议 ↗</button></div>
           </div>
-          
+          <div class="rec-box" id="rec-US-FUTU260710C99000" style="display:none">
+              <div class="rec-title">展期建议</div>
+              <div class="rec-row"><span>目标</span><span class="mono">US.FUTU260731C100000</span></div>
+              <div class="rec-row"><span>行权价</span><span>99.0 → 100.0</span></div>
+              <div class="rec-row"><span>到期</span><span>2026-07-31 (+21天)</span></div>
+              <div class="rec-row"><span>Bid/Ask</span><span>3.75 / 8.75</span></div>
+              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.479132592 / 78.504 / 22天</span></div>
+              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+1.93</span></div>
+            </div>
         </div>
         <div class="opt-card">
           <div class="card-top">
@@ -423,7 +431,7 @@ body {
           <div class="card-sub mono">US.TSLL260717C14000</div>
           <div class="card-grid">
             <div class="kv"><span class="k">行权价</span><span class="v mono">14.00</span></div>
-            <div class="kv"><span class="k">正股价</span><span class="v mono">12.98</span></div>
+            <div class="kv"><span class="k">正股价</span><span class="v mono">13.02</span></div>
             <div class="kv"><span class="k">到期日</span><span class="v">2026-07-17</span></div>
             <div class="kv">
               <span class="k">DTE</span>
@@ -432,13 +440,13 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:17.77777777777778%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.285</span></span></div>
-            <div class="kv"><span class="k">IV</span><span class="v mono">88.5%</span></div>
-            <div class="kv"><span class="k">最新价</span><span class="v mono">0.2900</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.304</span></span></div>
+            <div class="kv"><span class="k">IV</span><span class="v mono">85.8%</span></div>
+            <div class="kv"><span class="k">最新价</span><span class="v mono">0.3100</span></div>
             <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
           </div>
           <div class="card-bottom">
-            <div class="pnl neg">-66 <span class="pnl-pct">(-26.1%)</span></div>
+            <div class="pnl neg">-88 <span class="pnl-pct">(-34.8%)</span></div>
             <div></div>
           </div>
           
@@ -1137,7 +1145,7 @@ body {
         </div>
 </div>
 
-<div class="footer">Futu Monitor · 2026-07-10 03:55:13 · 富途 OpenAPI</div>
+<div class="footer">Futu Monitor · 2026-07-10 04:00:35 · 富途 OpenAPI</div>
 
 <script>
 function toggleSection(btn, id) {
