@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="90">
-<title>Haoming's Portfolio Monitor — 2026-08-09 11:57:26</title>
+<title>Haoming's Portfolio Monitor — 2026-08-09 12:02:34</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -128,9 +128,15 @@ tr:hover td { background: var(--bg3); }
 
 <div class="header">
   <h1>Haoming's Portfolio <span>Monitor</span></h1>
-  <span class="run-time">更新时间: 2026-08-09 11:57:26 | USD/HKD 7.8450 | <span id="live-clock"></span></span>
+  <span class="run-time">更新时间: 2026-08-09 12:02:34 | USD/HKD 7.8450 | <span id="live-clock"></span></span>
 </div>
 
+
+<div class="alert-bar">
+  <span>⚡ 需要操作：</span>
+  <span><strong>1</strong> 个期权需要展期</span>
+  
+</div>
 
 
 <!-- ── ZONE A: account ── -->
@@ -1166,7 +1172,7 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
                 <tbody>
-        <tr class="opt-row ">
+        <tr class="opt-row row-alert">
           <td><span class="market-flag">🇺🇸</span> <code>US.FUTU260814C104000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">104.00</td>
@@ -1174,20 +1180,20 @@ tr:hover td { background: var(--bg3); }
           <td>2026-08-14</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
-              <span class="dte-num" style="color:#f59e0b">6d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:11.11111111111111%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">5d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="delta-dot" style="background:#ef4444"></span>
             <span class="mono">0.835</span>
           </td>
           <td class="r mono">40.3%</td>
           <td class="r mono">5.5750</td>
           <td class="r mono" style="color:#ef4444">10.0%</td>
           <td class="r neg">-92<span style="font-size:11px;opacity:0.75"> (-36.0%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr></tbody>
+          <td><span class="badge badge-roll">ROLL</span> <button class="tip-btn" onclick="toggleDetail(this,'detail-rec-US-FUTU260814C104000')">建议 ↗</button></td>
+        </tr><tr id="detail-rec-US-FUTU260814C104000" style="display:none"><td colspan="12"><div class="tip-box">展期建议: US.FUTU260821C105000<br>行权价 104.0 → 105.0 | 到期 2026-08-21 (+7天)<br>bid=5.2 ask=9.5 mid=7.35<br>delta=0.651938775 iv=62.834 dte=12<br>净权利金: +1.775</div></td></tr></tbody>
               </table>
             </div>
           </td>
@@ -1233,8 +1239,8 @@ tr:hover td { background: var(--bg3); }
           <td>2026-08-14</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
-              <span class="dte-num" style="color:#f59e0b">6d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:11.11111111111111%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">5d</span>
             </div>
           </td>
           <td class="r">
@@ -1297,9 +1303,9 @@ tr:hover td { background: var(--bg3); }
 <div class="panel">
   <div class="panel-hdr">
     <span>期权监控</span>
+    <span class='badge badge-roll'>1 需展期</span>
     
     
-    <span class='badge badge-hold'>全部正常</span>
     <span class="spacer"></span>
     <span style="font-size:11px;color:var(--muted)">Delta 彩点: 🔴危险 🟡注意 🟢安全 🔵可回购</span>
     <button class="tip-btn" onclick="expandAllOpts(this)">全部展开 ↗</button>
@@ -1763,7 +1769,7 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-177,534<span style="font-size:11px;opacity:0.75"> (-84.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr><tr class="grp-row"><td colspan="12">🇺🇸 美股期权</td></tr>
-        <tr class="opt-row ">
+        <tr class="opt-row row-alert">
           <td><span class="market-flag">🇺🇸</span> <code>US.FUTU260814C104000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">104.00</td>
@@ -1771,20 +1777,20 @@ tr:hover td { background: var(--bg3); }
           <td>2026-08-14</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
-              <span class="dte-num" style="color:#f59e0b">6d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:11.11111111111111%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">5d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="delta-dot" style="background:#ef4444"></span>
             <span class="mono">0.835</span>
           </td>
           <td class="r mono">40.3%</td>
           <td class="r mono">5.5750</td>
           <td class="r mono" style="color:#ef4444">10.0%</td>
           <td class="r neg">-92<span style="font-size:11px;opacity:0.75"> (-36.0%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
+          <td><span class="badge badge-roll">ROLL</span> <button class="tip-btn" onclick="toggleDetail(this,'rec-US-FUTU260814C104000')">建议 ↗</button></td>
+        </tr><tr id="rec-US-FUTU260814C104000" style="display:none"><td colspan="12"><div class="tip-box">展期建议: US.FUTU260821C105000<br>行权价 104.0 → 105.0 | 到期 2026-08-21 (+7天)<br>bid=5.2 ask=9.5 mid=7.35<br>delta=0.651938775 iv=62.834 dte=12<br>净权利金: +1.775</div></td></tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇺🇸</span> <code>US.TSLL260814C8500</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
@@ -1793,8 +1799,8 @@ tr:hover td { background: var(--bg3); }
           <td>2026-08-14</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
-              <span class="dte-num" style="color:#f59e0b">6d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:11.11111111111111%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">5d</span>
             </div>
           </td>
           <td class="r">
@@ -1811,7 +1817,7 @@ tr:hover td { background: var(--bg3); }
   </table>
 </div>
 
-<div class="footer">Futu Portfolio Monitor — 2026-08-09 11:57:26 — 数据来源: 富途 OpenAPI</div>
+<div class="footer">Futu Portfolio Monitor — 2026-08-09 12:02:34 — 数据来源: 富途 OpenAPI</div>
 
 <script>
 // Toggle a single expandable row (detail panel or rec row)
