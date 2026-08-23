@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="90">
-<title>Haoming's Portfolio Monitor — 2026-08-24 05:01:21</title>
+<title>Haoming's Portfolio Monitor — 2026-08-24 05:06:26</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -128,9 +128,15 @@ tr:hover td { background: var(--bg3); }
 
 <div class="header">
   <h1>Haoming's Portfolio <span>Monitor</span></h1>
-  <span class="run-time">更新时间: 2026-08-24 05:01:21 | USD/HKD 7.8401 | <span id="live-clock"></span></span>
+  <span class="run-time">更新时间: 2026-08-24 05:06:26 | USD/HKD 7.8400 | <span id="live-clock"></span></span>
 </div>
 
+
+<div class="alert-bar">
+  <span>⚡ 需要操作：</span>
+  <span><strong>1</strong> 个期权需要展期</span>
+  
+</div>
 
 
 <!-- ── ZONE A: account ── -->
@@ -141,7 +147,7 @@ tr:hover td { background: var(--bg3); }
 <div id="metrics-block" class="metrics">
   <div class="mcard">
     <div class="label">净资产</div>
-    <div class="value">1,212,211</div>
+    <div class="value">1,212,207</div>
     <div class="sub">HKD</div>
   </div>
   <div class="mcard">
@@ -161,7 +167,7 @@ tr:hover td { background: var(--bg3); }
   </div>
   <div class="mcard">
     <div class="label">融资余额</div>
-    <div class="value neg">-581,849</div>
+    <div class="value neg">-581,848</div>
     <div class="sub">HKD: -344,931 | USD: -30,219</div>
   </div>
   <div class="mcard accent">
@@ -390,7 +396,7 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
                 <tbody>
-        <tr class="opt-row ">
+        <tr class="opt-row row-alert">
           <td><span class="market-flag">🇭🇰</span> <code>HK.TCH260828C440000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">440.00</td>
@@ -403,15 +409,15 @@ tr:hover td { background: var(--bg3); }
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#60a5fa"></span>
-            <span class="mono">0.000</span>
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">0.875</span>
           </td>
-          <td class="r mono">0.0%</td>
-          <td class="r mono">15.5400</td>
-          <td class="r mono" style="color:#ef4444">-9.4%</td>
-          <td class="r pos">112,090<span style="font-size:11px;opacity:0.75"> (+69.7%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr></tbody>
+          <td class="r mono">31.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">7.6%</td>
+          <td class="r pos">112,090<span style="font-size:11px;opacity:0.75"> (+64.2%)</span></td>
+          <td><span class="badge badge-roll">ROLL</span> <button class="tip-btn" onclick="toggleDetail(this,'detail-rec-HK-TCH260828C440000')">建议 ↗</button></td>
+        </tr><tr id="detail-rec-HK-TCH260828C440000" style="display:none"><td colspan="12"><div class="tip-box">无正权利金展期选项，建议等待IV上升后再展期</div></td></tr></tbody>
               </table>
             </div>
           </td>
@@ -463,12 +469,12 @@ tr:hover td { background: var(--bg3); }
           </td>
           <td class="r">
             <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.413</span>
+            <span class="mono">0.412</span>
           </td>
-          <td class="r mono">58.2%</td>
-          <td class="r mono">0.6400</td>
+          <td class="r mono">57.8%</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (-1.6%)</span></td>
+          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (+0.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
@@ -702,7 +708,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.000</span>
           </td>
           <td class="r mono">0.0%</td>
-          <td class="r mono">25.0000</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#ef4444">-3.3%</td>
           <td class="r neg">-3,363<span style="font-size:11px;opacity:0.75"> (-46.6%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -724,7 +730,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.347</span>
           </td>
           <td class="r mono">34.9%</td>
-          <td class="r mono">9.7450</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-1,128<span style="font-size:11px;opacity:0.75"> (-23.4%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -827,7 +833,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.436</span>
           </td>
           <td class="r mono">41.4%</td>
-          <td class="r mono">2.0000</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-15,690<span style="font-size:11px;opacity:0.75"> (-64.9%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -849,7 +855,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">-0.440</span>
           </td>
           <td class="r mono">49.2%</td>
-          <td class="r mono">1.9750</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#f59e0b">78.6%</td>
           <td class="r pos">1,350<span style="font-size:11px;opacity:0.75"> (-11.2%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -1109,12 +1115,12 @@ tr:hover td { background: var(--bg3); }
           </td>
           <td class="r">
             <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.329</span>
+            <span class="mono">0.250</span>
           </td>
-          <td class="r mono">54.0%</td>
-          <td class="r mono">10.9000</td>
+          <td class="r mono">42.1%</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">840<span style="font-size:11px;opacity:0.75"> (-4.8%)</span></td>
+          <td class="r pos">840<span style="font-size:11px;opacity:0.75"> (+40.4%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
@@ -1226,9 +1232,9 @@ tr:hover td { background: var(--bg3); }
 <div class="panel">
   <div class="panel-hdr">
     <span>期权监控</span>
+    <span class='badge badge-roll'>1 需展期</span>
     
     
-    <span class='badge badge-hold'>全部正常</span>
     <span class="spacer"></span>
     <span style="font-size:11px;color:var(--muted)">Delta 彩点: 🔴危险 🟡注意 🟢安全 🔵可回购</span>
     <button class="tip-btn" onclick="expandAllOpts(this)">全部展开 ↗</button>
@@ -1296,7 +1302,7 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-325<span style="font-size:11px;opacity:0.75"> (-37.2%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr><tr class="grp-row"><td colspan="12">🇭🇰 香港期权</td></tr>
-        <tr class="opt-row ">
+        <tr class="opt-row row-alert">
           <td><span class="market-flag">🇭🇰</span> <code>HK.TCH260828C440000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">440.00</td>
@@ -1309,15 +1315,15 @@ tr:hover td { background: var(--bg3); }
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#60a5fa"></span>
-            <span class="mono">0.000</span>
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">0.875</span>
           </td>
-          <td class="r mono">0.0%</td>
-          <td class="r mono">15.5400</td>
-          <td class="r mono" style="color:#ef4444">-9.4%</td>
-          <td class="r pos">112,090<span style="font-size:11px;opacity:0.75"> (+69.7%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
+          <td class="r mono">31.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">7.6%</td>
+          <td class="r pos">112,090<span style="font-size:11px;opacity:0.75"> (+64.2%)</span></td>
+          <td><span class="badge badge-roll">ROLL</span> <button class="tip-btn" onclick="toggleDetail(this,'rec-HK-TCH260828C440000')">建议 ↗</button></td>
+        </tr><tr id="rec-HK-TCH260828C440000" style="display:none"><td colspan="12"><div class="tip-box">无正权利金展期选项，建议等待IV上升后再展期</div></td></tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇭🇰</span> <code>HK.KST260828C35000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
@@ -1332,12 +1338,12 @@ tr:hover td { background: var(--bg3); }
           </td>
           <td class="r">
             <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.413</span>
+            <span class="mono">0.412</span>
           </td>
-          <td class="r mono">58.2%</td>
-          <td class="r mono">0.6400</td>
+          <td class="r mono">57.8%</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (-1.6%)</span></td>
+          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (+0.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
@@ -1423,7 +1429,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.000</span>
           </td>
           <td class="r mono">0.0%</td>
-          <td class="r mono">25.0000</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#ef4444">-3.3%</td>
           <td class="r neg">-3,363<span style="font-size:11px;opacity:0.75"> (-46.6%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -1445,7 +1451,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.347</span>
           </td>
           <td class="r mono">34.9%</td>
-          <td class="r mono">9.7450</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-1,128<span style="font-size:11px;opacity:0.75"> (-23.4%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -1511,7 +1517,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">0.436</span>
           </td>
           <td class="r mono">41.4%</td>
-          <td class="r mono">2.0000</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-15,690<span style="font-size:11px;opacity:0.75"> (-64.9%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -1533,7 +1539,7 @@ tr:hover td { background: var(--bg3); }
             <span class="mono">-0.440</span>
           </td>
           <td class="r mono">49.2%</td>
-          <td class="r mono">1.9750</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#f59e0b">78.6%</td>
           <td class="r pos">1,350<span style="font-size:11px;opacity:0.75"> (-11.2%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
@@ -1618,12 +1624,12 @@ tr:hover td { background: var(--bg3); }
           </td>
           <td class="r">
             <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.329</span>
+            <span class="mono">0.250</span>
           </td>
-          <td class="r mono">54.0%</td>
-          <td class="r mono">10.9000</td>
+          <td class="r mono">42.1%</td>
+          <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">840<span style="font-size:11px;opacity:0.75"> (-4.8%)</span></td>
+          <td class="r pos">840<span style="font-size:11px;opacity:0.75"> (+40.4%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
@@ -1696,7 +1702,7 @@ tr:hover td { background: var(--bg3); }
   </table>
 </div>
 
-<div class="footer">Futu Portfolio Monitor — 2026-08-24 05:01:21 — 数据来源: 富途 OpenAPI</div>
+<div class="footer">Futu Portfolio Monitor — 2026-08-24 05:06:26 — 数据来源: 富途 OpenAPI</div>
 
 <script>
 // Toggle a single expandable row (detail panel or rec row)
