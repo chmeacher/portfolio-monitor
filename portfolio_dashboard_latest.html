@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="90">
-<title>Haoming's Portfolio Monitor — 2026-09-17 17:59:38</title>
+<title>Haoming's Portfolio Monitor — 2026-09-17 18:32:32</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -128,7 +128,7 @@ tr:hover td { background: var(--bg3); }
 
 <div class="header">
   <h1>Haoming's Portfolio <span>Monitor</span></h1>
-  <span class="run-time">更新时间: 2026-09-17 17:59:38 | USD/HKD 7.8450 | <span id="live-clock"></span></span>
+  <span class="run-time">更新时间: 2026-09-17 18:32:32 | USD/HKD 7.8450 | <span id="live-clock"></span></span>
 </div>
 
 
@@ -147,12 +147,12 @@ tr:hover td { background: var(--bg3); }
 <div id="metrics-block" class="metrics">
   <div class="mcard">
     <div class="label">净资产</div>
-    <div class="value">997,475</div>
+    <div class="value">997,318</div>
     <div class="sub">HKD</div>
   </div>
   <div class="mcard">
     <div class="label">总持仓市值</div>
-    <div class="value">2,658,188</div>
+    <div class="value">2,658,031</div>
     <div class="sub">HKD（多空绝对值）</div>
   </div>
   <div class="mcard">
@@ -162,8 +162,8 @@ tr:hover td { background: var(--bg3); }
   </div>
   <div class="mcard">
     <div class="label">USD 持仓</div>
-    <div class="value">20,506</div>
-    <div class="sub">今日: <span class="pos">+433</span><span style="font-size:0.82em;opacity:0.75">（股票: <span class="pos">+433</span>，期权: <span class="pos">+0</span>）</span></div>
+    <div class="value">20,486</div>
+    <div class="sub">今日: <span class="pos">+413</span><span style="font-size:0.82em;opacity:0.75">（股票: <span class="pos">+413</span>，期权: <span class="pos">+0</span>）</span></div>
   </div>
   <div class="mcard">
     <div class="label">融资余额</div>
@@ -207,7 +207,162 @@ tr:hover td { background: var(--bg3); }
       </tr>
     </thead>
     <tbody>
-      <tr class="grp-row"><td colspan="10">🇭🇰 香港</td></tr>
+      <tr class="grp-row"><td colspan="10">🇺🇸 美股</td></tr>
+        <tr>
+          <td><span class="market-flag">🇺🇸</span> <strong>富途控股</strong><br><span class="sub">US.FUTU</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
+          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
+            <div style="position:absolute;left:60.41%;width:36.66%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
+            <div style="position:absolute;left:2.88%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#ef4444;border:1.5px solid var(--bg2);"></div></div>
+          </div>
+          <div style="position:relative;height:14px;margin-top:2px;">
+            <span style="position:absolute;left:2.88%;transform:translateX(-50%);color:#ef4444;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">110</span>
+            <span style="position:absolute;left:60.41%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">193</span>
+            <span style="position:absolute;left:97.07%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">246</span>
+          </div>
+        </div></td>
+          <td class="r">100</td>
+          <td class="r mono">181.10</td>
+          <td class="r mono">109.82</td>
+          <td class="r neg">-6,990</td>
+          <td class="r neg">-37.7%</td>
+          <td class="r mono">11,120</td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×1</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-US-FUTU')">详情 ↗</button></td>
+        </tr>
+        <tr id="detail-US-FUTU" style="display:none">
+          <td colspan="10" style="padding:0">
+            <div class="detail-panel">
+              <table class="detail-table">
+                <thead><tr>
+                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
+                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
+                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
+                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
+                </tr></thead>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇺🇸</span> <code>US.FUTU270115C120500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">120.50</td>
+          <td class="r mono" style="color:var(--muted)">109.82</td>
+          <td>2027-01-15</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">120d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.449</span>
+          </td>
+          <td class="r mono">50.9%</td>
+          <td class="r mono">9.2250</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">211<span style="font-size:11px;opacity:0.75"> (+17.6%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="market-flag">🇺🇸</span> <strong>2倍做多TSLA ETF-Direxion</strong><br><span class="sub">US.TSLL</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
+          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
+            <div style="position:absolute;left:39.51%;width:56.01%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
+            <div style="position:absolute;left:1.88%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#ef4444;border:1.5px solid var(--bg2);"></div></div>
+          </div>
+          <div style="position:relative;height:14px;margin-top:2px;">
+            <span style="position:absolute;left:1.88%;transform:translateX(-50%);color:#ef4444;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">9.31</span>
+            <span style="position:absolute;left:39.51%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">12</span>
+            <span style="position:absolute;left:95.52%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">17</span>
+          </div>
+        </div></td>
+          <td class="r">1,100</td>
+          <td class="r mono">19.06</td>
+          <td class="r mono">9.31</td>
+          <td class="r neg">-10,449</td>
+          <td class="r neg">-49.3%</td>
+          <td class="r mono">10,516</td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×11</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-US-TSLL')">详情 ↗</button></td>
+        </tr>
+        <tr id="detail-US-TSLL" style="display:none">
+          <td colspan="10" style="padding:0">
+            <div class="detail-panel">
+              <table class="detail-table">
+                <thead><tr>
+                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
+                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
+                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
+                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
+                </tr></thead>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇺🇸</span> <code>US.TSLL260925C9500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">9.50</td>
+          <td class="r mono" style="color:var(--muted)">9.31</td>
+          <td>2026-09-25</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:17.77777777777778%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">8d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.464</span>
+          </td>
+          <td class="r mono">82.7%</td>
+          <td class="r mono">0.3850</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">434<span style="font-size:11px;opacity:0.75"> (+50.6%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="market-flag">🇺🇸</span> <strong>霸王茶姬</strong><br><span class="sub">US.CHA</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
+          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
+            <div style="position:absolute;left:6.25%;width:78.16%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
+            <div style="position:absolute;left:99.26%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;border:1.5px solid var(--bg2);"></div></div>
+          </div>
+          <div style="position:relative;height:14px;margin-top:2px;">
+            <span style="position:absolute;left:95%;transform:translateX(-50%);color:#f59e0b;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">12</span>
+            <span style="position:absolute;left:6.25%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">11</span>
+            <span style="position:absolute;left:84.41%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">12</span>
+          </div>
+        </div></td>
+          <td class="r">15</td>
+          <td class="r mono">22.08</td>
+          <td class="r mono">12.19</td>
+          <td class="r neg">-148</td>
+          <td class="r neg">-42.4%</td>
+          <td class="r mono">183</td>
+          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
+          <td></td>
+        </tr>
+        <tr id="detail-US-CHA" style="display:none">
+          <td colspan="10" style="padding:0">
+            <div class="detail-panel">
+              <table class="detail-table">
+                <thead><tr>
+                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
+                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
+                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
+                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
+                </tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </td>
+        </tr><tr class="grp-row"><td colspan="10">🇭🇰 香港</td></tr>
         <tr>
           <td><span class="market-flag">🇭🇰</span> <strong>腾讯控股</strong><br><span class="sub">HK.00700</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
           <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
@@ -257,7 +412,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.351</span>
           </td>
-          <td class="r mono">30.3%</td>
+          <td class="r mono">30.4%</td>
           <td class="r mono">4.4000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">714<span style="font-size:11px;opacity:0.75"> (+0.2%)</span></td>
@@ -316,7 +471,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.393</span>
           </td>
-          <td class="r mono">39.9%</td>
+          <td class="r mono">40.1%</td>
           <td class="r mono">0.4750</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-2,240<span style="font-size:11px;opacity:0.75"> (-18.7%)</span></td>
@@ -338,7 +493,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.326</span>
           </td>
-          <td class="r mono">47.3%</td>
+          <td class="r mono">47.5%</td>
           <td class="r mono">0.2250</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">480<span style="font-size:11px;opacity:0.75"> (+6.5%)</span></td>
@@ -785,7 +940,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.399</span>
           </td>
-          <td class="r mono">44.8%</td>
+          <td class="r mono">44.9%</td>
           <td class="r mono">1.0300</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">1,060<span style="font-size:11px;opacity:0.75"> (+49.5%)</span></td>
@@ -949,161 +1104,6 @@ tr:hover td { background: var(--bg3); }
               </table>
             </div>
           </td>
-        </tr><tr class="grp-row"><td colspan="10">🇺🇸 美股</td></tr>
-        <tr>
-          <td><span class="market-flag">🇺🇸</span> <strong>富途控股</strong><br><span class="sub">US.FUTU</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
-          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
-            <div style="position:absolute;left:60.41%;width:36.66%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
-            <div style="position:absolute;left:2.88%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#ef4444;border:1.5px solid var(--bg2);"></div></div>
-          </div>
-          <div style="position:relative;height:14px;margin-top:2px;">
-            <span style="position:absolute;left:2.88%;transform:translateX(-50%);color:#ef4444;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">110</span>
-            <span style="position:absolute;left:60.41%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">193</span>
-            <span style="position:absolute;left:97.07%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">246</span>
-          </div>
-        </div></td>
-          <td class="r">100</td>
-          <td class="r mono">181.10</td>
-          <td class="r mono">109.82</td>
-          <td class="r neg">-6,970</td>
-          <td class="r neg">-37.6%</td>
-          <td class="r mono">11,140</td>
-          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×1</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-US-FUTU')">详情 ↗</button></td>
-        </tr>
-        <tr id="detail-US-FUTU" style="display:none">
-          <td colspan="10" style="padding:0">
-            <div class="detail-panel">
-              <table class="detail-table">
-                <thead><tr>
-                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
-                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
-                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
-                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
-                </tr></thead>
-                <tbody>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇺🇸</span> <code>US.FUTU270115C120500</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">120.50</td>
-          <td class="r mono" style="color:var(--muted)">109.82</td>
-          <td>2027-01-15</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
-              <span class="dte-num" style="color:#22c55e">120d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.449</span>
-          </td>
-          <td class="r mono">50.9%</td>
-          <td class="r mono">9.2250</td>
-          <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">211<span style="font-size:11px;opacity:0.75"> (+17.6%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr></tbody>
-              </table>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><span class="market-flag">🇺🇸</span> <strong>2倍做多TSLA ETF-Direxion</strong><br><span class="sub">US.TSLL</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
-          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
-            <div style="position:absolute;left:39.51%;width:56.01%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
-            <div style="position:absolute;left:1.88%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#ef4444;border:1.5px solid var(--bg2);"></div></div>
-          </div>
-          <div style="position:relative;height:14px;margin-top:2px;">
-            <span style="position:absolute;left:1.88%;transform:translateX(-50%);color:#ef4444;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">9.31</span>
-            <span style="position:absolute;left:39.51%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">12</span>
-            <span style="position:absolute;left:95.52%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">17</span>
-          </div>
-        </div></td>
-          <td class="r">1,100</td>
-          <td class="r mono">19.06</td>
-          <td class="r mono">9.31</td>
-          <td class="r neg">-10,449</td>
-          <td class="r neg">-49.3%</td>
-          <td class="r mono">10,516</td>
-          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×11</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-US-TSLL')">详情 ↗</button></td>
-        </tr>
-        <tr id="detail-US-TSLL" style="display:none">
-          <td colspan="10" style="padding:0">
-            <div class="detail-panel">
-              <table class="detail-table">
-                <thead><tr>
-                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
-                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
-                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
-                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
-                </tr></thead>
-                <tbody>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇺🇸</span> <code>US.TSLL260925C9500</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">9.50</td>
-          <td class="r mono" style="color:var(--muted)">9.31</td>
-          <td>2026-09-25</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:17.77777777777778%;background:#22c55e"></div></div>
-              <span class="dte-num" style="color:#22c55e">8d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.464</span>
-          </td>
-          <td class="r mono">82.4%</td>
-          <td class="r mono">0.3850</td>
-          <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">434<span style="font-size:11px;opacity:0.75"> (+50.6%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr></tbody>
-              </table>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><span class="market-flag">🇺🇸</span> <strong>霸王茶姬</strong><br><span class="sub">US.CHA</span><div style="margin-top:6px;padding-bottom:14px;position:relative;">
-          <div style="position:relative;height:4px;border-radius:2px;background:rgba(255,255,255,0.08);">
-            <div style="position:absolute;left:6.25%;width:78.16%;height:100%;background:rgba(124,107,255,0.45);border-radius:2px;"></div>
-            <div style="position:absolute;left:99.26%;top:50%;transform:translate(-50%,-50%);z-index:2;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;border:1.5px solid var(--bg2);"></div></div>
-          </div>
-          <div style="position:relative;height:14px;margin-top:2px;">
-            <span style="position:absolute;left:95%;transform:translateX(-50%);color:#f59e0b;font-size:10px;font-family:var(--font-mono);white-space:nowrap;">12</span>
-            <span style="position:absolute;left:6.25%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">11</span>
-            <span style="position:absolute;left:84.41%;transform:translateX(-50%);color:var(--muted);font-size:10px;font-family:var(--font-mono);">12</span>
-          </div>
-        </div></td>
-          <td class="r">15</td>
-          <td class="r mono">22.08</td>
-          <td class="r mono">12.19</td>
-          <td class="r neg">-148</td>
-          <td class="r neg">-42.4%</td>
-          <td class="r mono">183</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
-        </tr>
-        <tr id="detail-US-CHA" style="display:none">
-          <td colspan="10" style="padding:0">
-            <div class="detail-panel">
-              <table class="detail-table">
-                <thead><tr>
-                  <th>期权代码</th><th>类型</th><th class="r">行权价</th>
-                  <th class="r">正股现价</th><th>到期日</th><th>DTE</th><th class="r">Delta</th>
-                  <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
-                  <th class="r">未实现盈亏</th><th>状态 / 建议</th>
-                </tr></thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </td>
         </tr>
     </tbody>
   </table>
@@ -1139,7 +1139,51 @@ tr:hover td { background: var(--bg3); }
       </tr>
     </thead>
     <tbody>
-      <tr class="grp-row"><td colspan="12">🇭🇰 香港期权</td></tr>
+      <tr class="grp-row"><td colspan="12">🇺🇸 美股期权</td></tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇺🇸</span> <code>US.FUTU270115C120500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">120.50</td>
+          <td class="r mono" style="color:var(--muted)">109.82</td>
+          <td>2027-01-15</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">120d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.449</span>
+          </td>
+          <td class="r mono">50.9%</td>
+          <td class="r mono">9.2250</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">211<span style="font-size:11px;opacity:0.75"> (+17.6%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇺🇸</span> <code>US.TSLL260925C9500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">9.50</td>
+          <td class="r mono" style="color:var(--muted)">9.31</td>
+          <td>2026-09-25</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:17.77777777777778%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">8d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.464</span>
+          </td>
+          <td class="r mono">82.7%</td>
+          <td class="r mono">0.3850</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">434<span style="font-size:11px;opacity:0.75"> (+50.6%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr><tr class="grp-row"><td colspan="12">🇭🇰 香港期权</td></tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇭🇰</span> <code>HK.TCH260925C435000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
@@ -1156,7 +1200,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.351</span>
           </td>
-          <td class="r mono">30.3%</td>
+          <td class="r mono">30.4%</td>
           <td class="r mono">4.4000</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">714<span style="font-size:11px;opacity:0.75"> (+0.2%)</span></td>
@@ -1178,7 +1222,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.393</span>
           </td>
-          <td class="r mono">39.9%</td>
+          <td class="r mono">40.1%</td>
           <td class="r mono">0.4750</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r neg">-2,240<span style="font-size:11px;opacity:0.75"> (-18.7%)</span></td>
@@ -1200,7 +1244,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.326</span>
           </td>
-          <td class="r mono">47.3%</td>
+          <td class="r mono">47.5%</td>
           <td class="r mono">0.2250</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">480<span style="font-size:11px;opacity:0.75"> (+6.5%)</span></td>
@@ -1398,7 +1442,7 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#22c55e"></span>
             <span class="mono">0.399</span>
           </td>
-          <td class="r mono">44.8%</td>
+          <td class="r mono">44.9%</td>
           <td class="r mono">1.0300</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">1,060<span style="font-size:11px;opacity:0.75"> (+49.5%)</span></td>
@@ -1469,7 +1513,7 @@ tr:hover td { background: var(--bg3); }
           <td class="r mono" style="color:#60a5fa">100.0%</td>
           <td class="r pos">48,858<span style="font-size:11px;opacity:0.75"> (+89.2%)</span></td>
           <td><span class="badge badge-close">CLOSE</span> <button class="tip-btn" onclick="toggleDetail(this,'rec-HK-PEN270330C80000')">建议 ↗</button></td>
-        </tr><tr id="rec-HK-PEN270330C80000" style="display:none"><td colspan="12"><div class="tip-box">🟢 建议Combo展期（平旧+开新）<br>平仓: HK.PEN270330C80000（现价mid=0.0）<br>开仓: HK.PEN270629C62500<br>strike=62.5 到期=2027-06-29 (+285天)<br>bid=0.0 ask=0.0 mid=0.0<br>delta=0.310945901 theta=-0.01417888 iv=58.424<br>（新仓theta×1.0 &gt; 旧仓mid，一天theta即可覆盖回补成本）</div></td></tr>
+        </tr><tr id="rec-HK-PEN270330C80000" style="display:none"><td colspan="12"><div class="tip-box">🟢 建议Combo展期（平旧+开新）<br>平仓: HK.PEN270330C80000（现价mid=0.0）<br>开仓: HK.PEN270629C62500<br>strike=62.5 到期=2027-06-29 (+285天)<br>bid=0.0 ask=0.0 mid=0.0<br>delta=0.310945023 theta=-0.014180863 iv=58.428<br>（新仓theta×1.0 &gt; 旧仓mid，一天theta即可覆盖回补成本）</div></td></tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330P75000</code></td>
           <td><span class="cp-tag cp-put">PUT</span></td>
@@ -1486,61 +1530,17 @@ tr:hover td { background: var(--bg3); }
             <span class="delta-dot" style="background:#ef4444"></span>
             <span class="mono">-0.842</span>
           </td>
-          <td class="r mono">70.2%</td>
+          <td class="r mono">70.3%</td>
           <td class="r mono">0.0000</td>
           <td class="r mono" style="color:#ef4444">2.4%</td>
           <td class="r neg">-225,162<span style="font-size:11px;opacity:0.75"> (-106.5%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr><tr class="grp-row"><td colspan="12">🇺🇸 美股期权</td></tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇺🇸</span> <code>US.FUTU270115C120500</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">120.50</td>
-          <td class="r mono" style="color:var(--muted)">109.82</td>
-          <td>2027-01-15</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
-              <span class="dte-num" style="color:#22c55e">120d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.449</span>
-          </td>
-          <td class="r mono">50.9%</td>
-          <td class="r mono">9.2250</td>
-          <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">211<span style="font-size:11px;opacity:0.75"> (+17.6%)</span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇺🇸</span> <code>US.TSLL260925C9500</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">9.50</td>
-          <td class="r mono" style="color:var(--muted)">9.31</td>
-          <td>2026-09-25</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:17.77777777777778%;background:#22c55e"></div></div>
-              <span class="dte-num" style="color:#22c55e">8d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#22c55e"></span>
-            <span class="mono">0.464</span>
-          </td>
-          <td class="r mono">82.4%</td>
-          <td class="r mono">0.3850</td>
-          <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">434<span style="font-size:11px;opacity:0.75"> (+50.6%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
     </tbody>
   </table>
 </div>
 
-<div class="footer">Futu Portfolio Monitor — 2026-09-17 17:59:38 — 数据来源: 富途 OpenAPI</div>
+<div class="footer">Futu Portfolio Monitor — 2026-09-17 18:32:32 — 数据来源: 富途 OpenAPI</div>
 
 <script>
 // Toggle a single expandable row (detail panel or rec row)
