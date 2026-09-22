@@ -304,8 +304,8 @@ body {
   <h1>Haoming's <span>Portfolio</span></h1>
   <div class="header-right">
     <div class="run-time">
-      <span>2026-09-22 10:42:27</span>
-      <span>USD/HKD 7.8299</span>
+      <span>2026-09-22 10:47:50</span>
+      <span>USD/HKD 7.8450</span>
       <span id="live-clock"></span>
     </div>
   </div>
@@ -313,7 +313,7 @@ body {
 
 <div class="alert-bar">
           <span>⚡ 需要操作：</span>
-          <span><strong>2</strong> 个展期</span>
+          <span><strong>3</strong> 个展期</span>
           
         </div>
 
@@ -326,26 +326,26 @@ body {
   <div class="metrics">
     <div class="mcard">
       <div class="label">净资产</div>
-      <div class="value">1,114,062</div>
+      <div class="value">1,125,953</div>
       <div class="sub">HKD</div>
     </div>
     <div class="mcard">
       <div class="label">总持仓市值</div>
-      <div class="value">2,773,558</div>
+      <div class="value">2,785,763</div>
       <div class="sub">HKD (多空绝对值)</div>
     </div>
     <div class="mcard">
       <div class="label">HKD 持仓</div>
-      <div class="value">2,610,184</div>
-      <div class="sub">今日 <span class="pos">+41,226</span></div>
+      <div class="value">2,622,004</div>
+      <div class="sub">今日 <span class="pos">+52,206</span></div>
       <div class="pl-split">
-        <span>股票 <span class="pos">+140,272</span></span>
-        <span>期权 <span class="neg">-99,046</span></span>
+        <span>股票 <span class="pos">+158,767</span></span>
+        <span>期权 <span class="neg">-106,561</span></span>
       </div>
     </div>
     <div class="mcard">
       <div class="label">USD 持仓</div>
-      <div class="value">20,865</div>
+      <div class="value">20,874</div>
       <div class="sub">今日 <span class="pos">+82</span></div>
       <div class="pl-split">
         <span>股票 <span class="pos">+82</span></span>
@@ -354,14 +354,14 @@ body {
     </div>
     <div class="mcard">
       <div class="label">融资余额</div>
-      <div class="value neg">-1,659,360</div>
+      <div class="value neg">-1,659,809</div>
       <div class="sub">HKD: -1,426,387 | USD: -29,754</div>
     </div>
     <div class="mcard accent">
       <div class="label">杠杆倍数</div>
-      <div class="value" style="color:#ef4444">3.84×</div>
+      <div class="value" style="color:#ef4444">3.82×</div>
       <div class="lev-bar-wrap">
-        <div class="lev-track"><div class="lev-fill" style="width:76.8%;background:#ef4444"></div></div>
+        <div class="lev-track"><div class="lev-fill" style="width:76.4%;background:#ef4444"></div></div>
         <div class="lev-markers"><span>0×</span><span>警戒 2×</span><span>5×</span></div>
       </div>
     </div>
@@ -372,25 +372,25 @@ body {
 <div class="section-label" style="margin-top:4px;">
   <span>期权持仓</span>
   <div style="display:flex;align-items:center;gap:8px">
-    <span class='badge badge-roll'>2 展期</span>
+    <span class='badge badge-roll'>3 展期</span>
     
     
   </div>
 </div>
 <div id="opts-block">
   <div class="mkt-divider">🇭🇰 香港期权</div>
-        <div class="opt-card">
+        <div class="opt-card card-alert">
           <div class="card-top">
             <div class="card-title">
               <span class="flag">🇭🇰</span>
               <span class="und">00700</span>
               <span class="cp-tag cp-call">CALL</span>
             </div>
-            <span class="badge badge-hold">HOLD</span>
+            <span class="badge badge-roll">ROLL</span>
           </div>
           <div class="card-sub mono">HK.TCH260925C435000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">435.00 / 458.00</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">435.00 / 461.20</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -398,11 +398,19 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:6.666666666666667%;background:#ef4444"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#60a5fa"></span><span class="mono">0.000</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">-0.4%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">0.986</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">0.0%</span></div>
           </div>
-          
-          
+          <div class="card-bottom" style="justify-content:flex-end"><button class="rec-btn" onclick="toggleRec(this,'rec-HK-TCH260925C435000')">建议 ↗</button></div>
+          <div class="rec-box" id="rec-HK-TCH260925C435000" style="display:none">
+              <div class="rec-title">展期建议</div>
+              <div class="rec-row"><span>目标</span><span class="mono">HK.TCH261029C440000</span></div>
+              <div class="rec-row"><span>行权价</span><span>435.0 → 440.0</span></div>
+              <div class="rec-row"><span>到期</span><span>2026-10-29 (+34天)</span></div>
+              <div class="rec-row"><span>Bid/Ask</span><span>31.15 / 33.13</span></div>
+              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.707150756 / 32.079 / 37天</span></div>
+              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+5.93</span></div>
+            </div>
         </div>
         <div class="opt-card card-alert">
           <div class="card-top">
@@ -415,7 +423,7 @@ body {
           </div>
           <div class="card-sub mono">HK.KST260925C30500</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">30.50 / 31.84</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">30.50 / 31.96</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -423,8 +431,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:6.666666666666667%;background:#ef4444"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">0.826</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">9.8%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">0.823</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">8.7%</span></div>
           </div>
           <div class="card-bottom" style="justify-content:flex-end"><button class="rec-btn" onclick="toggleRec(this,'rec-HK-KST260925C30500')">建议 ↗</button></div>
           <div class="rec-box" id="rec-HK-KST260925C30500" style="display:none">
@@ -432,9 +440,9 @@ body {
               <div class="rec-row"><span>目标</span><span class="mono">HK.KST261029C31000</span></div>
               <div class="rec-row"><span>行权价</span><span>30.5 → 31.0</span></div>
               <div class="rec-row"><span>到期</span><span>2026-10-29 (+34天)</span></div>
-              <div class="rec-row"><span>Bid/Ask</span><span>2.25 / 2.35</span></div>
-              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.613107907 / 44.401 / 37天</span></div>
-              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+0.805</span></div>
+              <div class="rec-row"><span>Bid/Ask</span><span>2.32 / 2.41</span></div>
+              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.623381931 / 44.296 / 37天</span></div>
+              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+0.765</span></div>
             </div>
         </div>
         <div class="opt-card card-alert">
@@ -448,7 +456,7 @@ body {
           </div>
           <div class="card-sub mono">HK.KST260925C31000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">31.00 / 31.84</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">31.00 / 31.96</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -456,8 +464,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:6.666666666666667%;background:#ef4444"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">0.717</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">24.3%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">0.728</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">21.3%</span></div>
           </div>
           <div class="card-bottom" style="justify-content:flex-end"><button class="rec-btn" onclick="toggleRec(this,'rec-HK-KST260925C31000')">建议 ↗</button></div>
           <div class="rec-box" id="rec-HK-KST260925C31000" style="display:none">
@@ -465,9 +473,9 @@ body {
               <div class="rec-row"><span>目标</span><span class="mono">HK.KST261002C31500</span></div>
               <div class="rec-row"><span>行权价</span><span>31.0 → 31.5</span></div>
               <div class="rec-row"><span>到期</span><span>2026-10-02 (+7天)</span></div>
-              <div class="rec-row"><span>Bid/Ask</span><span>1.09 / 1.19</span></div>
-              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.576907616 / 45.263 / 10天</span></div>
-              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+0.03</span></div>
+              <div class="rec-row"><span>Bid/Ask</span><span>1.18 / 1.27</span></div>
+              <div class="rec-row"><span>Delta/IV/DTE</span><span>0.596274626 / 45.254 / 10天</span></div>
+              <div class="rec-row rec-credit"><span>净权利金</span><span class="pos">+0.005</span></div>
             </div>
         </div>
         <div class="opt-card">
@@ -481,7 +489,7 @@ body {
           </div>
           <div class="card-sub mono">HK.ALB261230C112500</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">112.50 / 115.80</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">112.50 / 117.30</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -489,8 +497,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.612</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">74.0%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.632</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">64.7%</span></div>
           </div>
           
           
@@ -506,7 +514,7 @@ body {
           </div>
           <div class="card-sub mono">HK.BLI261127C130000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">130.00 / 120.90</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">130.00 / 121.40</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -514,7 +522,7 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.418</span></span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.427</span></span></div>
             <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
           </div>
           
@@ -531,7 +539,7 @@ body {
           </div>
           <div class="card-sub mono">HK.TRP261230C320000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">320.00 / 320.00</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">320.00 / 321.20</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -539,8 +547,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.559</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.566</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">95.3%</span></div>
           </div>
           
           
@@ -556,7 +564,7 @@ body {
           </div>
           <div class="card-sub mono">HK.TRP270330P430000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">430.00 / 320.00</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">430.00 / 321.20</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -564,8 +572,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.858</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">2.2%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.835</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">3.3%</span></div>
           </div>
           
           
@@ -581,7 +589,7 @@ body {
           </div>
           <div class="card-sub mono">HK.MIU261127C26000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">26.00 / 27.80</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">26.00 / 27.86</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -589,8 +597,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">0.687</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">43.1%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">0.692</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">42.1%</span></div>
           </div>
           
           
@@ -606,7 +614,7 @@ body {
           </div>
           <div class="card-sub mono">HK.MIU270330P30000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">30.00 / 27.80</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">30.00 / 27.86</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -614,8 +622,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">-0.518</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">51.2%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">-0.514</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#f59e0b">52.1%</span></div>
           </div>
           
           
@@ -639,7 +647,7 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.326</span></span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.327</span></span></div>
             <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
           </div>
           
@@ -681,7 +689,7 @@ body {
           </div>
           <div class="card-sub mono">HK.LAU260929C48000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">48.00 / 45.20</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">48.00 / 45.46</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -689,7 +697,7 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:15.555555555555555%;background:#f59e0b"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.214</span></span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.232</span></span></div>
             <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">100.0%</span></div>
           </div>
           
@@ -706,7 +714,7 @@ body {
           </div>
           <div class="card-sub mono">HK.POP260929C155000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">155.00 / 155.20</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">155.00 / 155.10</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -714,8 +722,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:15.555555555555555%;background:#f59e0b"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.534</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">89.6%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#22c55e"></span><span class="mono">0.525</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#60a5fa">94.8%</span></div>
           </div>
           
           
@@ -731,7 +739,7 @@ body {
           </div>
           <div class="card-sub mono">HK.POP270330P195000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">195.00 / 155.20</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">195.00 / 155.10</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -739,8 +747,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.696</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">13.3%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#f59e0b"></span><span class="mono">-0.698</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">13.1%</span></div>
           </div>
           
           
@@ -756,7 +764,7 @@ body {
           </div>
           <div class="card-sub mono">HK.PEN270330C80000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">80.00 / 40.82</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">80.00 / 40.98</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -781,7 +789,7 @@ body {
           </div>
           <div class="card-sub mono">HK.PEN270330P75000</div>
           <div class="card-grid">
-            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">75.00 / 40.82</span></div>
+            <div class="kv"><span class="k">行权价/正股价</span><span class="v mono">75.00 / 40.98</span></div>
             <div class="kv">
               <span class="k">DTE</span>
               <span class="v">
@@ -789,8 +797,8 @@ body {
                 <span class="dte-track"><span class="dte-fill" style="width:100%;background:#22c55e"></span></span>
               </span>
             </div>
-            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.889</span></span></div>
-            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">0.9%</span></div>
+            <div class="kv"><span class="k">Delta</span><span class="v"><span class="dot" style="background:#ef4444"></span><span class="mono">-0.876</span></span></div>
+            <div class="kv"><span class="k">虚值占比</span><span class="v mono" style="color:#ef4444">1.4%</span></div>
           </div>
           
           
@@ -847,7 +855,7 @@ body {
         </div>
 </div>
 
-<div class="footer">Futu Monitor · 2026-09-22 10:42:27 · 富途 OpenAPI</div>
+<div class="footer">Futu Monitor · 2026-09-22 10:47:50 · 富途 OpenAPI</div>
 
 <script>
 function toggleSection(btn, id) {
