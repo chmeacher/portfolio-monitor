@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="90">
-<title>Haoming's Portfolio Monitor — 2026-10-10 10:12:42</title>
+<title>Haoming's Portfolio Monitor — 2026-10-10 10:31:47</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -128,9 +128,15 @@ tr:hover td { background: var(--bg3); }
 
 <div class="header">
   <h1>Haoming's Portfolio <span>Monitor</span></h1>
-  <span class="run-time">更新时间: 2026-10-10 10:12:42 | USD/HKD 7.8474 | <span id="live-clock"></span></span>
+  <span class="run-time">更新时间: 2026-10-10 10:31:47 | USD/HKD 7.8474 | <span id="live-clock"></span></span>
 </div>
 
+
+<div class="alert-bar">
+  <span>⚡ 需要操作：</span>
+  
+  <span><strong>1</strong> 个期权可以回购（Delta &lt; 0.1）</span>
+</div>
 
 
 <!-- ── ZONE A: account ── -->
@@ -220,9 +226,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-710,080</td>
           <td class="r neg">-32.4%</td>
           <td class="r mono">1,444,320</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×34</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-00700')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-00700" style="display:none">
           <td colspan="10" style="padding:0">
@@ -234,7 +240,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.TCH261127C440000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">440.00</td>
+          <td class="r mono" style="color:var(--muted)">424.80</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.408</span>
+          </td>
+          <td class="r mono">29.3%</td>
+          <td class="r mono">6.3500</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r neg">-12,682<span style="font-size:11px;opacity:0.75"> (-42.5%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -257,9 +285,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-1,395,640</td>
           <td class="r neg">-62.5%</td>
           <td class="r mono">963,200</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×64</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-01024')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-01024" style="display:none">
           <td colspan="10" style="padding:0">
@@ -271,7 +299,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.KST261016C29500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">29.50</td>
+          <td class="r mono" style="color:var(--muted)">30.10</td>
+          <td>2026-10-16</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">6d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.638</span>
+          </td>
+          <td class="r mono">44.7%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#f59e0b">40.6%</td>
+          <td class="r neg">-18,560<span style="font-size:11px;opacity:0.75"> (-134.9%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -294,9 +344,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-93,950</td>
           <td class="r neg">-30.0%</td>
           <td class="r mono">214,000</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×4</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-09988')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-09988" style="display:none">
           <td colspan="10" style="padding:0">
@@ -308,7 +358,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.ALB261230C112500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">112.50</td>
+          <td class="r mono" style="color:var(--muted)">107.00</td>
+          <td>2026-12-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">81d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.445</span>
+          </td>
+          <td class="r mono">39.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">15,660<span style="font-size:11px;opacity:0.75"> (+57.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -331,9 +403,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-123,660</td>
           <td class="r neg">-40.4%</td>
           <td class="r mono">182,640</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×4</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-09961')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-09961" style="display:none">
           <td colspan="10" style="padding:0">
@@ -345,7 +417,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.TRP261230C320000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">320.00</td>
+          <td class="r mono" style="color:var(--muted)">304.40</td>
+          <td>2026-12-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">81d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.427</span>
+          </td>
+          <td class="r mono">33.4%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">1,509<span style="font-size:11px;opacity:0.75"> (+15.4%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -368,9 +462,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-126,600</td>
           <td class="r neg">-46.7%</td>
           <td class="r mono">144,480</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×20</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-09626')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-09626" style="display:none">
           <td colspan="10" style="padding:0">
@@ -382,7 +476,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.BLI261029C115000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">115.00</td>
+          <td class="r mono" style="color:var(--muted)">120.40</td>
+          <td>2026-10-29</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:42.22222222222222%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">19d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.695</span>
+          </td>
+          <td class="r mono">43.2%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">30.8%</td>
+          <td class="r neg">-4,020<span style="font-size:11px;opacity:0.75"> (-75.3%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -405,9 +521,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-43,724</td>
           <td class="r neg">-36.0%</td>
           <td class="r mono">77,880</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×3</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-put">Put ×15</span></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-01810')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-01810" style="display:none">
           <td colspan="10" style="padding:0">
@@ -419,7 +535,51 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU261127C26000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">26.00</td>
+          <td class="r mono" style="color:var(--muted)">25.96</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.540</span>
+          </td>
+          <td class="r mono">43.8%</td>
+          <td class="r mono">1.6850</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">810<span style="font-size:11px;opacity:0.75"> (+14.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU270330P30000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">30.00</td>
+          <td class="r mono" style="color:var(--muted)">25.96</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.858</span>
+          </td>
+          <td class="r mono">21.9%</td>
+          <td class="r mono">4.1500</td>
+          <td class="r mono" style="color:#ef4444">2.7%</td>
+          <td class="r neg">-21,150<span style="font-size:11px;opacity:0.75"> (-0.7%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -442,9 +602,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-69,096</td>
           <td class="r neg">-53.3%</td>
           <td class="r mono">58,487</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×10</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-00241')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-00241" style="display:none">
           <td colspan="10" style="padding:0">
@@ -456,7 +616,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.ALH270629C3200</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">3.20</td>
+          <td class="r mono" style="color:var(--muted)">2.86</td>
+          <td>2027-06-29</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">262d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.465</span>
+          </td>
+          <td class="r mono">39.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (+0.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -496,9 +678,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-43,992</td>
           <td class="r neg">-48.9%</td>
           <td class="r mono">46,008</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×63</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-put">Put ×57</span></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-09868')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-09868" style="display:none">
           <td colspan="10" style="padding:0">
@@ -510,7 +692,51 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330C80000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">80.00</td>
+          <td class="r mono" style="color:var(--muted)">38.34</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#60a5fa"></span>
+            <span class="mono">0.035</span>
+          </td>
+          <td class="r mono">52.5%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">52,638<span style="font-size:11px;opacity:0.75"> (+96.1%)</span></td>
+          <td><span class="badge badge-close">CLOSE</span> <button class="tip-btn" onclick="toggleDetail(this,'detail-rec-HK-PEN270330C80000')">建议 ↗</button></td>
+        </tr><tr id="detail-rec-HK-PEN270330C80000" style="display:none"><td colspan="12"><div class="tip-box">🟢 建议Combo展期（平旧+开新）<br>平仓: HK.PEN270330C80000（现价mid=0.0）<br>开仓: HK.PEN270629C55000<br>strike=55.0 到期=2027-06-29 (+262天)<br>bid=0.0 ask=0.0 mid=0.0<br>delta=0.302888071 theta=-0.012439422 iv=52.664<br>（新仓theta×1.0 &gt; 旧仓mid，一天theta即可覆盖回补成本）</div></td></tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330P75000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">75.00</td>
+          <td class="r mono" style="color:var(--muted)">38.34</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.827</span>
+          </td>
+          <td class="r mono">84.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">2.5%</td>
+          <td class="r neg">-237,462<span style="font-size:11px;opacity:0.75"> (-124.1%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -533,9 +759,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-53,150</td>
           <td class="r neg">-54.3%</td>
           <td class="r mono">44,660</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×5</span></td>
           <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-02015')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-02015" style="display:none">
           <td colspan="10" style="padding:0">
@@ -547,7 +773,29 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.LAU261127C46000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">46.00</td>
+          <td class="r mono" style="color:var(--muted)">44.66</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.469</span>
+          </td>
+          <td class="r mono">45.9%</td>
+          <td class="r mono">2.4300</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r neg">-160<span style="font-size:11px;opacity:0.75"> (-9.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -570,9 +818,9 @@ tr:hover td { background: var(--bg3); }
           <td class="r neg">-15,220</td>
           <td class="r neg">-32.5%</td>
           <td class="r mono">30,460</td>
-          <td style="white-space:nowrap"><span class="badge badge-roll">未覆盖</span></td>
-          <td style="white-space:nowrap"><span class="badge badge-noput">未覆盖</span></td>
-          <td></td>
+          <td style="white-space:nowrap"><span class="badge badge-hold">Call ×1</span></td>
+          <td style="white-space:nowrap"><span class="badge badge-put">Put ×1</span></td>
+          <td><button class="tip-btn" onclick="toggleDetail(this,'detail-HK-09992')">详情 ↗</button></td>
         </tr>
         <tr id="detail-HK-09992" style="display:none">
           <td colspan="10" style="padding:0">
@@ -584,7 +832,51 @@ tr:hover td { background: var(--bg3); }
                   <th class="r">IV</th><th class="r">最新价</th><th class="r">虚值占比</th>
                   <th class="r">未实现盈亏</th><th>状态 / 建议</th>
                 </tr></thead>
-                <tbody></tbody>
+                <tbody>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.POP261127C152500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">152.50</td>
+          <td class="r mono" style="color:var(--muted)">152.30</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.519</span>
+          </td>
+          <td class="r mono">18.4%</td>
+          <td class="r mono">2.9000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">86<span style="font-size:11px;opacity:0.75"> (+9.5%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.POP270330P195000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">195.00</td>
+          <td class="r mono" style="color:var(--muted)">152.30</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.818</span>
+          </td>
+          <td class="r mono">37.7%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">5.1%</td>
+          <td class="r neg">-720<span style="font-size:11px;opacity:0.75"> (-8.7%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr></tbody>
               </table>
             </div>
           </td>
@@ -704,18 +996,18 @@ tr:hover td { background: var(--bg3); }
           <td>2026-10-23</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:31.11111111111111%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">14d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.720</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-706<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">97.0%</td>
+          <td class="r mono">1.2900</td>
+          <td class="r mono" style="color:#ef4444">30.2%</td>
+          <td class="r neg">-706<span style="font-size:11px;opacity:0.75"> (-108.1%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr></tbody>
               </table>
@@ -763,18 +1055,18 @@ tr:hover td { background: var(--bg3); }
           <td>2026-11-13</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:77.77777777777779%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">35d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.706</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-688<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">52.1%</td>
+          <td class="r mono">11.8250</td>
+          <td class="r mono" style="color:#ef4444">34.8%</td>
+          <td class="r neg">-688<span style="font-size:11px;opacity:0.75"> (-129.6%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr></tbody>
               </table>
@@ -828,8 +1120,8 @@ tr:hover td { background: var(--bg3); }
   <div class="panel-hdr">
     <span>期权监控</span>
     
+    <span class='badge badge-close'>1 可回购</span>
     
-    <span class='badge badge-hold'>全部正常</span>
     <span class="spacer"></span>
     <span style="font-size:11px;color:var(--muted)">Delta 彩点: 🔴危险 🟡注意 🟢安全 🔵可回购</span>
     <button class="tip-btn" onclick="expandAllOpts(this)">全部展开 ↗</button>
@@ -854,289 +1146,289 @@ tr:hover td { background: var(--bg3); }
     <tbody>
       <tr class="grp-row"><td colspan="12">🇭🇰 香港期权</td></tr>
         <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.ALB261230C112500</code></td>
+          <td><span class="market-flag">🇭🇰</span> <code>HK.TCH261127C440000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">112.50</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-12-30</td>
+          <td class="r mono">440.00</td>
+          <td class="r mono" style="color:var(--muted)">424.80</td>
+          <td>2026-11-27</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.408</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">15,660<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.ALH270629C3200</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">3.20</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2027-06-29</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">0<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.BLI261029C115000</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">115.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-10-29</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-4,020<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">29.3%</td>
+          <td class="r mono">6.3500</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r neg">-12,682<span style="font-size:11px;opacity:0.75"> (-42.5%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇭🇰</span> <code>HK.KST261016C29500</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">29.50</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
+          <td class="r mono" style="color:var(--muted)">30.10</td>
           <td>2026-10-16</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:13.333333333333334%;background:#f59e0b"></div></div>
+              <span class="dte-num" style="color:#f59e0b">6d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.638</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-18,560<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">44.7%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#f59e0b">40.6%</td>
+          <td class="r neg">-18,560<span style="font-size:11px;opacity:0.75"> (-134.9%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.LAU261127C46000</code></td>
+          <td><span class="market-flag">🇭🇰</span> <code>HK.ALB261230C112500</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">46.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-11-27</td>
+          <td class="r mono">112.50</td>
+          <td class="r mono" style="color:var(--muted)">107.00</td>
+          <td>2026-12-30</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">81d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.445</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-160<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU261127C26000</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">26.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-11-27</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">810<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU270330P30000</code></td>
-          <td><span class="cp-tag cp-put">PUT</span></td>
-          <td class="r mono">30.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2027-03-30</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-21,150<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330C80000</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">80.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2027-03-30</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">52,638<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330P75000</code></td>
-          <td><span class="cp-tag cp-put">PUT</span></td>
-          <td class="r mono">75.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2027-03-30</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-237,462<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.POP261127C152500</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">152.50</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-11-27</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">86<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.POP270330P195000</code></td>
-          <td><span class="cp-tag cp-put">PUT</span></td>
-          <td class="r mono">195.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2027-03-30</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-720<span style="font-size:11px;opacity:0.75"></span></td>
-          <td><span class="badge badge-hold">HOLD</span> </td>
-        </tr>
-        <tr class="opt-row ">
-          <td><span class="market-flag">🇭🇰</span> <code>HK.TCH261127C440000</code></td>
-          <td><span class="cp-tag cp-call">CALL</span></td>
-          <td class="r mono">440.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td>2026-11-27</td>
-          <td>
-            <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
-            </div>
-          </td>
-          <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
-          </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-12,682<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">39.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">15,660<span style="font-size:11px;opacity:0.75"> (+57.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇭🇰</span> <code>HK.TRP261230C320000</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">320.00</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
+          <td class="r mono" style="color:var(--muted)">304.40</td>
           <td>2026-12-30</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">81d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.427</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r pos">1,509<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">33.4%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">1,509<span style="font-size:11px;opacity:0.75"> (+15.4%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.BLI261029C115000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">115.00</td>
+          <td class="r mono" style="color:var(--muted)">120.40</td>
+          <td>2026-10-29</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:42.22222222222222%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">19d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.695</span>
+          </td>
+          <td class="r mono">43.2%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">30.8%</td>
+          <td class="r neg">-4,020<span style="font-size:11px;opacity:0.75"> (-75.3%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU261127C26000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">26.00</td>
+          <td class="r mono" style="color:var(--muted)">25.96</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.540</span>
+          </td>
+          <td class="r mono">43.8%</td>
+          <td class="r mono">1.6850</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">810<span style="font-size:11px;opacity:0.75"> (+14.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.MIU270330P30000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">30.00</td>
+          <td class="r mono" style="color:var(--muted)">25.96</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.858</span>
+          </td>
+          <td class="r mono">21.9%</td>
+          <td class="r mono">4.1500</td>
+          <td class="r mono" style="color:#ef4444">2.7%</td>
+          <td class="r neg">-21,150<span style="font-size:11px;opacity:0.75"> (-0.7%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.ALH270629C3200</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">3.20</td>
+          <td class="r mono" style="color:var(--muted)">2.86</td>
+          <td>2027-06-29</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">262d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.465</span>
+          </td>
+          <td class="r mono">39.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">0<span style="font-size:11px;opacity:0.75"> (+0.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330C80000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">80.00</td>
+          <td class="r mono" style="color:var(--muted)">38.34</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#60a5fa"></span>
+            <span class="mono">0.035</span>
+          </td>
+          <td class="r mono">52.5%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">52,638<span style="font-size:11px;opacity:0.75"> (+96.1%)</span></td>
+          <td><span class="badge badge-close">CLOSE</span> <button class="tip-btn" onclick="toggleDetail(this,'rec-HK-PEN270330C80000')">建议 ↗</button></td>
+        </tr><tr id="rec-HK-PEN270330C80000" style="display:none"><td colspan="12"><div class="tip-box">🟢 建议Combo展期（平旧+开新）<br>平仓: HK.PEN270330C80000（现价mid=0.0）<br>开仓: HK.PEN270629C55000<br>strike=55.0 到期=2027-06-29 (+262天)<br>bid=0.0 ask=0.0 mid=0.0<br>delta=0.302888071 theta=-0.012439422 iv=52.664<br>（新仓theta×1.0 &gt; 旧仓mid，一天theta即可覆盖回补成本）</div></td></tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.PEN270330P75000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">75.00</td>
+          <td class="r mono" style="color:var(--muted)">38.34</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.827</span>
+          </td>
+          <td class="r mono">84.1%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">2.5%</td>
+          <td class="r neg">-237,462<span style="font-size:11px;opacity:0.75"> (-124.1%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.LAU261127C46000</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">46.00</td>
+          <td class="r mono" style="color:var(--muted)">44.66</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.469</span>
+          </td>
+          <td class="r mono">45.9%</td>
+          <td class="r mono">2.4300</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r neg">-160<span style="font-size:11px;opacity:0.75"> (-9.0%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.POP261127C152500</code></td>
+          <td><span class="cp-tag cp-call">CALL</span></td>
+          <td class="r mono">152.50</td>
+          <td class="r mono" style="color:var(--muted)">152.30</td>
+          <td>2026-11-27</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">48d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.519</span>
+          </td>
+          <td class="r mono">18.4%</td>
+          <td class="r mono">2.9000</td>
+          <td class="r mono" style="color:#60a5fa">100.0%</td>
+          <td class="r pos">86<span style="font-size:11px;opacity:0.75"> (+9.5%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
+        </tr>
+        <tr class="opt-row ">
+          <td><span class="market-flag">🇭🇰</span> <code>HK.POP270330P195000</code></td>
+          <td><span class="cp-tag cp-put">PUT</span></td>
+          <td class="r mono">195.00</td>
+          <td class="r mono" style="color:var(--muted)">152.30</td>
+          <td>2027-03-30</td>
+          <td>
+            <div class="dte-wrap">
+              <div class="dte-track"><div class="dte-fill" style="width:100%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">171d</span>
+            </div>
+          </td>
+          <td class="r">
+            <span class="delta-dot" style="background:#ef4444"></span>
+            <span class="mono">-0.818</span>
+          </td>
+          <td class="r mono">37.7%</td>
+          <td class="r mono">0.0000</td>
+          <td class="r mono" style="color:#ef4444">5.1%</td>
+          <td class="r neg">-720<span style="font-size:11px;opacity:0.75"> (-8.7%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr><tr class="grp-row"><td colspan="12">🇺🇸 美股期权</td></tr>
         <tr class="opt-row ">
@@ -1147,18 +1439,18 @@ tr:hover td { background: var(--bg3); }
           <td>2026-10-23</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:31.11111111111111%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">14d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.720</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-706<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">97.0%</td>
+          <td class="r mono">1.2900</td>
+          <td class="r mono" style="color:#ef4444">30.2%</td>
+          <td class="r neg">-706<span style="font-size:11px;opacity:0.75"> (-108.1%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
         <tr class="opt-row ">
@@ -1169,25 +1461,25 @@ tr:hover td { background: var(--bg3); }
           <td>2026-11-13</td>
           <td>
             <div class="dte-wrap">
-              <div class="dte-track"><div class="dte-fill" style="width:0%;background:#888"></div></div>
-              <span class="dte-num" style="color:#888">—d</span>
+              <div class="dte-track"><div class="dte-fill" style="width:77.77777777777779%;background:#22c55e"></div></div>
+              <span class="dte-num" style="color:#22c55e">35d</span>
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#888"></span>
-            <span class="mono">—</span>
+            <span class="delta-dot" style="background:#f59e0b"></span>
+            <span class="mono">0.706</span>
           </td>
-          <td class="r mono">—</td>
-          <td class="r mono">—</td>
-          <td class="r mono" style="color:var(--muted)">—</td>
-          <td class="r neg">-688<span style="font-size:11px;opacity:0.75"></span></td>
+          <td class="r mono">52.1%</td>
+          <td class="r mono">11.8250</td>
+          <td class="r mono" style="color:#ef4444">34.8%</td>
+          <td class="r neg">-688<span style="font-size:11px;opacity:0.75"> (-129.6%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
     </tbody>
   </table>
 </div>
 
-<div class="footer">Futu Portfolio Monitor — 2026-10-10 10:12:42 — 数据来源: 富途 OpenAPI</div>
+<div class="footer">Futu Portfolio Monitor — 2026-10-10 10:31:47 — 数据来源: 富途 OpenAPI</div>
 
 <script>
 // Toggle a single expandable row (detail panel or rec row)
