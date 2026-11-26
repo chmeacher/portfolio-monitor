@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="refresh" content="90">
-<title>Haoming's Portfolio Monitor — 2026-11-26 09:23:17</title>
+<title>Haoming's Portfolio Monitor — 2026-11-26 09:28:42</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -128,15 +128,9 @@ tr:hover td { background: var(--bg3); }
 
 <div class="header">
   <h1>Haoming's Portfolio <span>Monitor</span></h1>
-  <span class="run-time">更新时间: 2026-11-26 09:23:17 | USD/HKD 7.8388 | <span id="live-clock"></span></span>
+  <span class="run-time">更新时间: 2026-11-26 09:28:42 | USD/HKD 7.8381 | <span id="live-clock"></span></span>
 </div>
 
-
-<div class="alert-bar">
-  <span>⚡ 需要操作：</span>
-  <span><strong>1</strong> 个期权需要展期</span>
-  <span><strong>1</strong> 个期权可以回购（Delta &lt; 0.1）</span>
-</div>
 
 
 <!-- ── ZONE A: account ── -->
@@ -147,12 +141,12 @@ tr:hover td { background: var(--bg3); }
 <div id="metrics-block" class="metrics">
   <div class="mcard">
     <div class="label">净资产</div>
-    <div class="value">707,321</div>
+    <div class="value">707,239</div>
     <div class="sub">HKD</div>
   </div>
   <div class="mcard">
     <div class="label">总持仓市值</div>
-    <div class="value">2,266,775</div>
+    <div class="value">2,266,681</div>
     <div class="sub">HKD（多空绝对值）</div>
   </div>
   <div class="mcard">
@@ -162,12 +156,12 @@ tr:hover td { background: var(--bg3); }
   </div>
   <div class="mcard">
     <div class="label">USD 持仓</div>
-    <div class="value">16,252</div>
+    <div class="value">16,242</div>
     <div class="sub">今日: <span class="pos">+0</span><span style="font-size:0.82em;opacity:0.75">（股票: <span class="pos">+0</span>，期权: <span class="pos">+0</span>）</span></div>
   </div>
   <div class="mcard">
     <div class="label">融资余额</div>
-    <div class="value neg">-1,559,451</div>
+    <div class="value neg">-1,559,432</div>
     <div class="sub">HKD: -1,340,520 | USD: -27,929</div>
   </div>
   <div class="mcard accent">
@@ -958,7 +952,7 @@ tr:hover td { background: var(--bg3); }
           <td class="r mono">57.0%</td>
           <td class="r mono">5.0750</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r neg">-142<span style="font-size:11px;opacity:0.75"> (-39.0%)</span></td>
+          <td class="r neg">-153<span style="font-size:11px;opacity:0.75"> (-39.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr></tbody>
               </table>
@@ -974,9 +968,9 @@ tr:hover td { background: var(--bg3); }
 <div class="panel">
   <div class="panel-hdr">
     <span>期权监控</span>
-    <span class='badge badge-roll'>1 需展期</span>
-    <span class='badge badge-close'>1 可回购</span>
     
+    
+    <span class='badge badge-hold'>全部正常</span>
     <span class="spacer"></span>
     <span style="font-size:11px;color:var(--muted)">Delta 彩点: 🔴危险 🟡注意 🟢安全 🔵可回购</span>
     <button class="tip-btn" onclick="expandAllOpts(this)">全部展开 ↗</button>
@@ -1283,14 +1277,14 @@ tr:hover td { background: var(--bg3); }
           <td class="r mono">57.0%</td>
           <td class="r mono">5.0750</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r neg">-142<span style="font-size:11px;opacity:0.75"> (-39.0%)</span></td>
+          <td class="r neg">-153<span style="font-size:11px;opacity:0.75"> (-39.0%)</span></td>
           <td><span class="badge badge-hold">HOLD</span> </td>
         </tr><tr class="grp-row"><td colspan="12">🇨🇳 A股期权</td></tr>
         <tr class="opt-row ">
           <td><span class="market-flag">🇨🇳</span> <code>CN.588000C2612M01350</code></td>
           <td><span class="cp-tag cp-call">CALL</span></td>
           <td class="r mono">1.350</td>
-          <td class="r mono" style="color:var(--muted)">1.254</td>
+          <td class="r mono" style="color:var(--muted)">1.271</td>
           <td>2026-12-23</td>
           <td>
             <div class="dte-wrap">
@@ -1299,20 +1293,20 @@ tr:hover td { background: var(--bg3); }
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#60a5fa"></span>
-            <span class="mono">0.000</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">0.337</span>
           </td>
-          <td class="r mono">43.8%</td>
-          <td class="r mono">0.0315</td>
+          <td class="r mono">46.5%</td>
+          <td class="r mono">0.0353</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r pos">3,200<span style="font-size:11px;opacity:0.75"> (+38.8%)</span></td>
-          <td><span class="badge badge-close">CLOSE</span> </td>
+          <td class="r pos">2,592<span style="font-size:11px;opacity:0.75"> (+31.5%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
-        <tr class="opt-row row-alert">
+        <tr class="opt-row ">
           <td><span class="market-flag">🇨🇳</span> <code>CN.588000P2612M01250</code></td>
           <td><span class="cp-tag cp-put">PUT</span></td>
           <td class="r mono">1.250</td>
-          <td class="r mono" style="color:var(--muted)">1.254</td>
+          <td class="r mono" style="color:var(--muted)">1.271</td>
           <td>2026-12-23</td>
           <td>
             <div class="dte-wrap">
@@ -1321,20 +1315,20 @@ tr:hover td { background: var(--bg3); }
             </div>
           </td>
           <td class="r">
-            <span class="delta-dot" style="background:#ef4444"></span>
-            <span class="mono">-1.000</span>
+            <span class="delta-dot" style="background:#22c55e"></span>
+            <span class="mono">-0.411</span>
           </td>
-          <td class="r mono">0.1%</td>
-          <td class="r mono">0.0765</td>
+          <td class="r mono">61.4%</td>
+          <td class="r mono">0.0718</td>
           <td class="r mono" style="color:#60a5fa">100.0%</td>
-          <td class="r neg">-1,530<span style="font-size:11px;opacity:0.75"> (-25.0%)</span></td>
-          <td><span class="badge badge-roll">ROLL</span> </td>
+          <td class="r neg">-1,060<span style="font-size:11px;opacity:0.75"> (-17.3%)</span></td>
+          <td><span class="badge badge-hold">HOLD</span> </td>
         </tr>
     </tbody>
   </table>
 </div>
 
-<div class="footer">Futu Portfolio Monitor — 2026-11-26 09:23:17 — 数据来源: 富途 OpenAPI</div>
+<div class="footer">Futu Portfolio Monitor — 2026-11-26 09:28:42 — 数据来源: 富途 OpenAPI</div>
 
 <script>
 // Toggle a single expandable row (detail panel or rec row)
